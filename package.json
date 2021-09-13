@@ -1,0 +1,54 @@
+{
+  "name": "@NFTist/NFT-marketplace",
+  "version": "0.1.4",
+  "description": "NFTist Marketplace",
+  "files": [
+    "/contracts",
+    "!/contracts/Migrations.sol",
+    "/types",
+    "ERC721SimplePlacementsV1Data.json",
+    "RNSSimplePlacementsV1Data.json"
+  ],
+  "scripts": {
+    "test": "npx truffle test",
+    "lint": "npx eslint ./test",
+    "prepublish": "npx truffle compile && node datagen.js && npm run types-generation",
+    "types-generation": "typechain --target=web3-v1 '*Data.json' && typechain --target=web3-v2 '*Data.json' && typechain --target=truffle '*Data.json' && typechain --target=ethers '*Data.json'",
+    "coverage": "npx truffle run coverage"
+  },
+  "keywords": [
+    "marketplace",
+    "nft",
+    "erc721"
+  ],
+  "author": "CryptoMackenzie",
+  "license": "ISC",
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "0.5.4",
+    "@truffle/hdwallet-provider": "^1.0.42",
+    "chai": "^4.2.0",
+    "erc1820": "0.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eth-ens-namehash": "^2.0.8",
+    "eth-gas-reporter": "^0.2.17",
+    "solidity-coverage": "^0.7.9",
+    "truffle": "^5.1.39",
+    "typechain": "^1.0.5",
+    "typechain-target-ethers": "^1.0.4",
+    "typechain-target-truffle": "^1.0.2",
+    "typechain-target-web3-v1": "^1.0.4",
+    "typechain-target-web3-v2": "^1.0.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.5.1",
+    "@openzeppelin/contracts-ethereum-package": "^2.2.3",
+    "@openzeppelin/upgrades": "^2.8.0",
+    "@rsksmart/erc677": "^1.0.2",
+    "@rsksmart/rns-registry": "^1.0.4",
+    "@rsksmart/rns-resolver": "^2.0.0",
+    "@rsksmart/rns-rskregistrar": "^1.2.4",
+    "solidity-bytes-utils": "0.0.9"
+  }
+}
