@@ -6,12 +6,7 @@ Smart Contracts designed to support the buying and selling of NFT tokens using m
 **RIF Name Service (RNS)** enables the use of human readable names for blockchain addresses helping users to receive transactions in personalized domains. New RNS Domains can be obtained through the [RNS Manager]("https://manager.rns.rifos.org/").
 
 This contract allows users to list an NFT token for a fixed price in multiple payment methods (ERC-20, ERC-677, ERC-777, and R-BTC). The contract acts as an  <b>escrow</b>, ensuring the NFT is released only when a <b>valid payment</b> is received, allowing the seller to keep control at all times.
-  
-## Usage 
 
-```
-npm i @rsksmart/rif-marketplace-nfts
-```
 
 ## Run locally
 
